@@ -1,0 +1,34 @@
+{
+    "name": "KeyboardTest",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "e78da279-b743-4035-873b-98d3d7394b4e",
+            "actions": [
+                {
+                    "name": "Push",
+                    "type": "Value",
+                    "id": "2456c37c-30a0-4d0a-aea8-bc718dae80f0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f2fb5779-10d6-4bf0-918a-aa0b4839edb9",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Push",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
