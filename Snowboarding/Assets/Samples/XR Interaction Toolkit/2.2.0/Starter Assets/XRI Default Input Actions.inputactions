@@ -1520,8 +1520,8 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "1105beb3-1306-4b04-8761-921226a40cd1",
-                    "path": "<OculusTouchController>{RightHand}/thumbstick",
+                    "id": "e0f5b2b1-7b15-45d8-8724-fbbf60664ccf",
+                    "path": "<XRController>{RightHand}/thumbstick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

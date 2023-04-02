@@ -27,6 +27,6 @@ public class joystickTilt : MonoBehaviour
         rawVal = value.Get<Vector2>();
         float rawX = rawVal.x;
         Debug.Log(rawX);
-        gameObject.transform.eulerAngles = new Vector3(0, 0, (rawX * tiltFactor));
+        gameObject.transform.eulerAngles = new Vector3(0, 0, (-rawX * tiltFactor));
     }
 }

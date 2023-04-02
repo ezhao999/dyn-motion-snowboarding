@@ -1298,7 +1298,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480409145}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1306,7 +1306,7 @@ Transform:
   - {fileID: 62362570}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1636794541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,14 +1989,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3441597317333864432, guid: 931aa2eda86644e148df91417c80183d, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5240636665523682293, guid: 931aa2eda86644e148df91417c80183d, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8607583300043657320, guid: 931aa2eda86644e148df91417c80183d, type: 3}
       propertyPath: m_Name
       value: Board
@@ -2047,20 +2039,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 931aa2eda86644e148df91417c80183d, type: 3}
---- !u!1 &8607583300000043258 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8607583300043657320, guid: 931aa2eda86644e148df91417c80183d, type: 3}
-  m_PrefabInstance: {fileID: 8607583300000043257}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8607583300000043259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8607583300000043258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f687a12a089ab42328b951613b0fc427, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
