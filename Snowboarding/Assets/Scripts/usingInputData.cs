@@ -22,7 +22,10 @@ public class usingInputData : MonoBehaviour
     //    if (_inputData._rightController.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion rightQuat))
     //    {
     //        Vector3 rightV3 = rightQuat.eulerAngles;
-    //        gameObject.transform.eulerAngles = new Vector3(0, 0, rightV3.z);
+    //        Vector3 currV3 = gameObject.transform.eulerAngles;
+    //        gameObject.transform.eulerAngles = new Vector3(currV3.x,
+    //                                                        currV3.y,
+    //                                                        rightV3.z);
     //    }
     //}
 
@@ -31,7 +34,10 @@ public class usingInputData : MonoBehaviour
         if (_inputData._rightController.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion rightQuat))
         {
             Vector3 rightV3 = rightQuat.eulerAngles;
-            gameObject.transform.eulerAngles = new Vector3(0, 0, rightV3.z);
+            Vector3 currV3 = gameObject.transform.eulerAngles;
+            gameObject.transform.eulerAngles = new Vector3(currV3.x,
+                                                           currV3.y,
+                                                           rightV3.z);
         }
     }
 }
