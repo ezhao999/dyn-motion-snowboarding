@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jessica Lab.unity
     guid: d37ce99b8434140cdad24e5ed92b0a46
+  - enabled: 0
+    path: Assets/Scenes/Physics Lab.unity
+    guid: cd1030846fb4b44e6a5589968e43bf84
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3a06dcbd28eb245b7a0ec98715532437, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 3088c9543fcbafe4591ea6bf4f3f964f, type: 2}

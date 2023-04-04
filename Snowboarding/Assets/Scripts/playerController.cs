@@ -42,7 +42,8 @@ public class playerController : MonoBehaviour
     //    {
     //        Vector3 rightV3 = rightQuat.eulerAngles;
     //        inputAngle = rightV3.z;
-    //    } else { inputAngle = 0; }
+    //    }
+    //    else { inputAngle = 0; }
 
     //    // calculate input impact and apply to localVelocity
     //    float horizontal = (1 - downPreserveRatio) * (inputAngle / maxAngle);
