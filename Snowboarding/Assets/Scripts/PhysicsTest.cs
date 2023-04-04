@@ -10,7 +10,7 @@ public class PhysicsTest : MonoBehaviour
     public ForceMode forceMode;
 
     private Rigidbody rb;
-    private Vector3 inputForceDir;
+    private Vector3 inputForceDir = new Vector3(0,0,0);
     private inputData _inputData; // for VR controller rotation input
 
     // Start is called before the first frame update
@@ -31,9 +31,10 @@ public class PhysicsTest : MonoBehaviour
         if (_inputData._rightController.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion rightQuat))
         {
             Vector3 rightInput = rightQuat.eulerAngles;
-            Vector3 inputNormalized = rightInput.normalized;
-            inputForceDir = new Vector3(0, 0, inputNormalized.z);
-            rb.AddForce(inputForceDir * force, forceMode);
+            rightInput.Normalize();
+            inputForceDir = new Vector3(0, 0, rightInput.z);
+            Vector3 globalForceDir = gameObject.transform.TransformDirection(inputForceDir);
+            rb.AddForce(globalForceDir * force, forceMode);
         }
     }
 
