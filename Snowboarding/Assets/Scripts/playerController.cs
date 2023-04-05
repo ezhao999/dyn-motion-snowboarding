@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
+
+///////////// DISCARD THIS CODE!!!! USE PhysicsTest.cs INSTEAD!!!!/////////
+
 [RequireComponent(typeof(inputData))]
 public class playerController : MonoBehaviour
 {
