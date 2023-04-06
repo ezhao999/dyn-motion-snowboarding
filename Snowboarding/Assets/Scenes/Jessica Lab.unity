@@ -220,6 +220,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -144.3
       objectReference: {fileID: 0}
+    - target: {fileID: 2884603088682399471, guid: 81ab99855a4e248fea180d7ece8731ed, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 0682842edec5946c1b799a834554cc56, type: 2}
     - target: {fileID: 5865165048572161401, guid: 81ab99855a4e248fea180d7ece8731ed, type: 3}
       propertyPath: m_Name
       value: terrian
@@ -228,7 +232,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4400747230426572640, guid: 81ab99855a4e248fea180d7ece8731ed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 81ab99855a4e248fea180d7ece8731ed, type: 3}
 --- !u!1 &705507993
 GameObject:
@@ -980,25 +985,6 @@ Transform:
   m_Father: {fileID: 1921360418}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1272277074 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5865165048572161401, guid: 81ab99855a4e248fea180d7ece8731ed, type: 3}
-  m_PrefabInstance: {fileID: 419455884}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1272277077
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1272277074}
-  m_Material: {fileID: 13400000, guid: 0682842edec5946c1b799a834554cc56, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &1303444045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,6 +1973,7 @@ GameObject:
   - component: {fileID: 1801827202}
   - component: {fileID: 1801827208}
   - component: {fileID: 1801827209}
+  - component: {fileID: 1801827210}
   m_Layer: 0
   m_Name: The Capsule
   m_TagString: Untagged
@@ -2008,6 +1995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravitationalForce: 9.81
   forceMode: 5
+  debugRotation: 0
 --- !u!54 &1801827203
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2018,7 +2006,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 5
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2145,6 +2133,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25e014b550af4ebc9127ae423457e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1801827210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801827201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b645f62ddd84f4c828affc53a38ab042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restartTime: 10
 --- !u!1 &1813495887
 GameObject:
   m_ObjectHideFlags: 0

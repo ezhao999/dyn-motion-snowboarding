@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothFrames: 120
-  snowboardWheel: {fileID: 1979200752}
+  snowboardWheelObject: {fileID: 1979200752}
 --- !u!1001 &419455884
 PrefabInstance:
   m_ObjectHideFlags: 0
