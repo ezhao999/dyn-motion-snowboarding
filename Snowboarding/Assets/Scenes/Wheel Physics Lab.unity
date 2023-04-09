@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 840447037}
   - component: {fileID: 840447039}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -346,6 +346,7 @@ GameObject:
   - component: {fileID: 908693106}
   - component: {fileID: 908693104}
   - component: {fileID: 908693107}
+  - component: {fileID: 908693108}
   m_Layer: 0
   m_Name: 'Player '
   m_TagString: Untagged
@@ -399,6 +400,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restartTime: 8
+--- !u!114 &908693108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908693103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e858f1a8349b43749bc53b9fcd10c8d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snowboardWheel: {fileID: 1662464794}
+  wheelCylinder: {fileID: 1662464792}
+  DebugText: {fileID: 0}
+  currentVisualRotation: {x: 0, y: 0, z: 0}
+  currentWheelRotation: 0
 --- !u!1 &1394421331
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,9 +752,8 @@ GameObject:
   - component: {fileID: 1662464795}
   - component: {fileID: 1662464794}
   - component: {fileID: 1662464798}
-  - component: {fileID: 1662464797}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -837,23 +854,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662464792}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1662464797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662464792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e07ee7706210441859bdbb12d26e08bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snowboardWheel: {fileID: 1662464794}
-  wheelCylinder: {fileID: 1662464792}
-  DebugText: {fileID: 0}
-  currentVisualRotation: {x: 0, y: 0, z: 0}
-  currentWheelRotation: 0
 --- !u!114 &1662464798
 MonoBehaviour:
   m_ObjectHideFlags: 0
