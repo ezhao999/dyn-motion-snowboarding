@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class RestartAfterTimer : MonoBehaviour
 {
-    public float restartTime = 1.0f;
+    [SerializeField] private float restartTime = 1.0f;
+    [SerializeField] private Rigidbody rb;
     Vector3 startPos;
     Quaternion startRot;
     // Start is called before the first frame update
@@ -18,6 +19,7 @@ public class RestartAfterTimer : MonoBehaviour
     IEnumerator RestartAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
+        rb.velocity = new Vector3(0, 0, 0);
         this.transform.position = startPos;
         this.transform.rotation = startRot;
         StartCoroutine(RestartAfterTime(restartTime));
