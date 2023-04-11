@@ -12,7 +12,7 @@ public class SnowboardVehicle : MonoBehaviour
 
     [SerializeField] private WheelCollider frontWheel;
     [SerializeField] private WheelCollider backWheel;
-    [Range(0.0f, 1.0f)] public float maxFriction;
+    [Range(0.0f, 8.0f)] public float maxFriction; // 0-1 for stiffness, 0-5 for asymptote
 
     private inputData _inputData; // for VR controller rotation input
     private Vector3 inputForceDir = new Vector3(0, 0, 0);   
@@ -63,10 +63,32 @@ public class SnowboardVehicle : MonoBehaviour
         WheelFrictionCurve rFriction = backWheel.sidewaysFriction;
 
         //frontWheel.sidewaysFriction.stiffness = Math.Abs(wheelAngle * maxFriction);
-        fFriction.stiffness = Mathf.Abs(wheelAngle * maxFriction);
-        rFriction.stiffness = Mathf.Abs(wheelAngle * maxFriction);
+        //fFriction.stiffness = Mathf.Abs(wheelAngle * maxFriction);
+        //rFriction.stiffness = Mathf.Abs(wheelAngle * maxFriction);
+        //frontWheel.sidewaysFriction = fFriction;
+        //backWheel.sidewaysFriction = rFriction;
 
-        Debug.Log(fFriction.stiffness);
+        // V2.5:
+        // Goal: Asymptote friction changes, not stiffness
+
+        float frictionVal = Mathf.Abs(wheelAngle * maxFriction);
+        frictionVal = Mathf.Max(frictionVal, maxFriction / 2);
+
+        fFriction.asymptoteValue = frictionVal;
+        rFriction.asymptoteValue = frictionVal;
+        frontWheel.sidewaysFriction = fFriction;
+        backWheel.sidewaysFriction = rFriction;
+
+
+    }
+    // V3:
+    void LerpPlayer()
+    {
+        // if the player has passed certain degrees of rotation - lerp them back to a set threshold
+        // if player passed positive limit - set them back to positive limit
+        // if player passed negative limit - set them back to negative limit
+
+        // if the player is tipping over - make them upright again
 
     }
 
@@ -78,15 +100,5 @@ public class SnowboardVehicle : MonoBehaviour
         float newVal = proportion * newRange;
         return newVal;
     }
-
-    //private void OnTilt()
-    //{
-    //    if (_inputData._rightController.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion rightQuat))
-    //    {
-    //        Vector3 rightInput = rightQuat.eulerAngles;
-    //        currentWheelRotation = rightInput.z;
-
-    //    }
-    //}
 
 }

@@ -15,7 +15,11 @@ public class RestartAfterTimer : MonoBehaviour
         startRot = this.transform.rotation;
         StartCoroutine(RestartAfterTime(restartTime));
     }
+    void Update()
+    {
+        Debug.Log(rb.velocity);
 
+    }
     IEnumerator RestartAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
