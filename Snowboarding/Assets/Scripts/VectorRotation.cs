@@ -59,14 +59,16 @@ public class VectorRotation : MonoBehaviour
 #if UNITY_EDITOR // Used to manually set rotation while in editor, is ignored on build
         if (debugRotation != 0)
         {
-            theta = Mathf.Clamp(debugRotation, -90, 90) / 90;
+            //theta = Mathf.Clamp(debugRotation, -90, 90);
+            theta = debugRotation / 2;
             globalForceDir = RotateAbout(globalForceDir, planeNormal, theta);
         }
 #else
         if (_inputData._rightController.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion rightQuat))
             {
                 Vector3 rightInput = rightQuat.eulerAngles;
-                theta = Mathf.Clamp(rightInput.z, -90, 90) / 90;
+                //theta = Mathf.Clamp(rightInput.z, -90, 90);
+                theta = debugRotation / 2;
                 globalForceDir = RotateAbout(globalForceDir, planeNormal, theta);
             }
 #endif
