@@ -14,23 +14,26 @@ public class SnowboardVehicle : MonoBehaviour
     [SerializeField] private WheelCollider backWheel;
     [Range(0.0f, 8.0f)] public float maxFriction; // 0-1 for stiffness, 0-5 for asymptote
 
-    private inputData _inputData; // for VR controller rotation input
-    private Vector3 inputForceDir = new Vector3(0, 0, 0);   
+    private float minVelocity = 2.0f;
 
     [SerializeField] private GameObject frontMesh;
     [SerializeField] private GameObject backMesh;
     [SerializeField] private Text DebugText;
 
+    [SerializeField] private float maxAngle;
+
     public Vector3 currentVisualRotation;
     public float currentWheelRotation = 0;
 
-    //For V2 - variable friction
-    [Range(0.0f, 1.0f)] public float flatFriction;
-    [Range(0.0f, 1.0f)] public float edgeFriction;
+    private inputData _inputData; // for VR controller rotation input
+    private Vector3 inputForceDir = new Vector3(0, 0, 0);
+    private Rigidbody rb;
+
 
     void Start()
     {
         _inputData = GetComponent<inputData>(); // for VR controller rotation input
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -62,12 +65,6 @@ public class SnowboardVehicle : MonoBehaviour
         WheelFrictionCurve fFriction = frontWheel.sidewaysFriction;
         WheelFrictionCurve rFriction = backWheel.sidewaysFriction;
 
-        //frontWheel.sidewaysFriction.stiffness = Math.Abs(wheelAngle * maxFriction);
-        //fFriction.stiffness = Mathf.Abs(wheelAngle * maxFriction);
-        //rFriction.stiffness = Mathf.Abs(wheelAngle * maxFriction);
-        //frontWheel.sidewaysFriction = fFriction;
-        //backWheel.sidewaysFriction = rFriction;
-
         // V2.5:
         // Goal: Asymptote friction changes, not stiffness
 
@@ -80,17 +77,21 @@ public class SnowboardVehicle : MonoBehaviour
         backWheel.sidewaysFriction = rFriction;
 
 
+        // V4:
+        // Goal: Constant minimum speed
+        if(rb.velocity.x < minVelocity)
+        {
+            Debug.Log("adding force");
+            //rb.AddForce(new Vector3(5, 0, 0));
+            rb.AddRelativeForce(Vector3.forward * 200);
+        }
+
     }
     // V3:
-    void LerpPlayer()
-    {
-        // if the player has passed certain degrees of rotation - lerp them back to a set threshold
-        // if player passed positive limit - set them back to positive limit
-        // if player passed negative limit - set them back to negative limit
-
-        // if the player is tipping over - make them upright again
-
-    }
+    // Goal: Limit Player Rotation
+    //      Current progress:
+    //      Raising wheel stiffness in the rear helps prevent oversteer / spinning out
+    //      No need to add scripts for now
 
     float scale(float a, float b, float c, float d, float oldVal)
     {
