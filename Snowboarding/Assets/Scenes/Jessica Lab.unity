@@ -1994,8 +1994,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravitationalForce: 9.81
+  forceMultiplier: 1
+  rotationSmoothSpeed: 1
   forceMode: 5
   debugRotation: 0
+  maxRotation: 90
 --- !u!54 &1801827203
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2145,7 +2148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b645f62ddd84f4c828affc53a38ab042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartTime: 10
+  restartTime: 20
+  rb: {fileID: 1801827203}
 --- !u!1 &1813495887
 GameObject:
   m_ObjectHideFlags: 0
