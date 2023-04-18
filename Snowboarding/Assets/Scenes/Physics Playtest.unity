@@ -874,6 +874,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4130145098550501987, guid: 7930275f997a1449ba9f80c3b54364df, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130145098550501988, guid: 7930275f997a1449ba9f80c3b54364df, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4130145098550502015, guid: 7930275f997a1449ba9f80c3b54364df, type: 3}
       propertyPath: m_Name
       value: BoardVehicle
@@ -886,13 +894,104 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4130145098550501988, guid: 7930275f997a1449ba9f80c3b54364df, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7930275f997a1449ba9f80c3b54364df, type: 3}
+--- !u!1 &742116411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4130145098550502015, guid: 7930275f997a1449ba9f80c3b54364df, type: 3}
+  m_PrefabInstance: {fileID: 742116410}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &742116412 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4130145098482440235, guid: 7930275f997a1449ba9f80c3b54364df, type: 3}
+  m_PrefabInstance: {fileID: 742116410}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &742116413 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4130145099807121160, guid: 7930275f997a1449ba9f80c3b54364df, type: 3}
+  m_PrefabInstance: {fileID: 742116410}
+  m_PrefabAsset: {fileID: 0}
+--- !u!146 &742116414 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 4130145098482440239, guid: 7930275f997a1449ba9f80c3b54364df, type: 3}
+  m_PrefabInstance: {fileID: 742116410}
+  m_PrefabAsset: {fileID: 0}
+--- !u!146 &742116415 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 4130145099807121162, guid: 7930275f997a1449ba9f80c3b54364df, type: 3}
+  m_PrefabInstance: {fileID: 742116410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &922566072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4130145098550501986, guid: 7930275f997a1449ba9f80c3b54364df, type: 3}
   m_PrefabInstance: {fileID: 742116410}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &922566073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742116411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25e014b550af4ebc9127ae423457e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &922566074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742116411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Generic XR Controller
+  m_DefaultActionMap: Board
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &922566075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742116411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09034e982a1834b09ab60dafe8843778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelAngle: 0
+  maxSteer: 25
+  frontWheel: {fileID: 742116415}
+  backWheel: {fileID: 742116414}
+  maxFriction: 3
+  frontMesh: {fileID: 742116413}
+  backMesh: {fileID: 742116412}
+  DebugText: {fileID: 0}
+  maxAngle: 0
+  currentVisualRotation: {x: 0, y: 0, z: 0}
+  currentWheelRotation: 0
 --- !u!1 &1303444045
 GameObject:
   m_ObjectHideFlags: 0

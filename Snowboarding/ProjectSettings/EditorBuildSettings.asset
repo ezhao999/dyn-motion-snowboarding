@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Board Lab.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Jessica Lab.unity
     guid: d37ce99b8434140cdad24e5ed92b0a46
   - enabled: 0
@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Wheel Physics Lab.unity
     guid: 4edd6f30b465aeb47859719de8415b4e
+  - enabled: 1
+    path: Assets/Scenes/Physics Playtest.unity
+    guid: 78f6ed164d85e4ae1ad457efbfab6fd3
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3a06dcbd28eb245b7a0ec98715532437, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 3088c9543fcbafe4591ea6bf4f3f964f, type: 2}
