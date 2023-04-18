@@ -20,9 +20,9 @@ public class SnowboardVehicle : MonoBehaviour
     [SerializeField] private GameObject backMesh;
     [SerializeField] private Text DebugText;
 
-    [SerializeField] private float maxAngle;
+    // [SerializeField] private float maxAngle;
 
-    public Vector3 currentVisualRotation;
+    public Vector3 wheelVisualRotation;
     public float currentWheelRotation = 0;
 
     private inputData _inputData; // for VR controller rotation input
@@ -43,13 +43,13 @@ public class SnowboardVehicle : MonoBehaviour
         float mappedSteer = wheelAngle * maxSteer;
 
         //get current angle
-        currentVisualRotation = frontMesh.transform.localRotation.eulerAngles;
+        wheelVisualRotation = frontMesh.transform.localRotation.eulerAngles;
 
         //set rotation as new Vector3(currentX, newY, currentZ);
         frontMesh.transform.localRotation = Quaternion.Euler(
-                                            new Vector3(currentVisualRotation.x, 
+                                            new Vector3(wheelVisualRotation.x, 
                                                         mappedSteer, 
-                                                        currentVisualRotation.z));
+                                                        wheelVisualRotation.z));
         //steer front wheel collider
         frontWheel.steerAngle = mappedSteer;
 
@@ -92,6 +92,7 @@ public class SnowboardVehicle : MonoBehaviour
     //      Current progress:
     //      Raising wheel stiffness in the rear helps prevent oversteer / spinning out
     //      No need to add scripts for now
+
 
     float scale(float a, float b, float c, float d, float oldVal)
     {
