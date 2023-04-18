@@ -17,7 +17,7 @@ public class RestartAfterTimer : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(rb.velocity);
+        // Debug.Log(rb.velocity);
 
     }
     IEnumerator RestartAfterTime(float time)

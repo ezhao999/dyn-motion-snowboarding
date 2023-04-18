@@ -28,17 +28,20 @@ public class balanceBoard : MonoBehaviour
     }
     void Stabilizer()
     {
+        // adapted from Marcos-Schultz https://forum.unity.com/threads/balancing-motorcycle.611017/
         Vector3 axisFromRotate = Vector3.Cross(transform.up, Vector3.up);
         Vector3 torqueForce = axisFromRotate.normalized * axisFromRotate.magnitude * 50;
-        torqueForce.z = torqueForce.z * 0.4f;
+        torqueForce.x = torqueForce.x * 2f;
         torqueForce -= rb.angularVelocity;
+        torqueForce.z = 0;
+        Debug.Log(torqueForce);
         rb.AddTorque(torqueForce * rb.mass * 0.02f, ForceMode.Impulse);
 
-        float rpmSign = Mathf.Sign(rb.velocity.x) * 0.02f;
+/*        float rpmSign = Mathf.Sign(rb.velocity.x) * 0.02f;
         if (rbVelocityMagnitude > 1.0f)
         {
             rb.angularVelocity += new Vector3(0, vehicleState.wheelAngle * rpmSign, 0);
-        }
+        }*/
     }
     void balance()
     {
