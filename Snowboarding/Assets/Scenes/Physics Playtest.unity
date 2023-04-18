@@ -922,11 +922,6 @@ WheelCollider:
   m_CorrespondingSourceObject: {fileID: 4130145099807121162, guid: 7930275f997a1449ba9f80c3b54364df, type: 3}
   m_PrefabInstance: {fileID: 742116410}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &922566072 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4130145098550501986, guid: 7930275f997a1449ba9f80c3b54364df, type: 3}
-  m_PrefabInstance: {fileID: 742116410}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &922566073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1403,6 +1398,7 @@ GameObject:
   - component: {fileID: 1480409148}
   - component: {fileID: 1480409147}
   - component: {fileID: 1480409146}
+  - component: {fileID: 1480409149}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -1448,15 +1444,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480409145}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -2}
+  m_LocalRotation: {x: 0.10111203, y: 0.70033675, z: -0.10125875, w: 0.6993221}
+  m_LocalPosition: {x: -141.81789, y: 61.54494, z: -33.863148}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 62362570}
-  m_Father: {fileID: 922566072}
+  m_Father: {fileID: 1921360418}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1480409149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480409145}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d596bfdfdc4f4402194f8875183c7488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smoothFrames: 0
+  vehicle: {fileID: 742116411}
 --- !u!1 &1636794541
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,7 +2095,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1921360418}
   m_Layer: 0
-  m_Name: VR or camera related
+  m_Name: camera related
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2106,6 +2116,7 @@ Transform:
   - {fileID: 705507995}
   - {fileID: 1813495889}
   - {fileID: 1303444050}
+  - {fileID: 1480409148}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
