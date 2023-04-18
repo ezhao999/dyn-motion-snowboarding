@@ -41,6 +41,7 @@ public class balanceBoard : MonoBehaviour
 
         // adapted from Marcos-Schultz https://forum.unity.com/threads/balancing-motorcycle.611017/
         Vector3 axisFromRotate = Vector3.Cross(transform.up, Vector3.up);
+        axisFromRotate = transform.forward * Vector3.Dot(axisFromRotate, transform.forward);
 
         torqueForce = axisFromRotate.normalized * axisFromRotate.magnitude * 50;
         torqueForce.x = torqueForce.x * 0.4f;
