@@ -190,6 +190,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stylized Terrian2
       objectReference: {fileID: 0}
+    - target: {fileID: 4914901255970187839, guid: 15f18c97251564d33a567e24c4f7d648, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 049886ac1c9be8d4db643c92eee3880f, type: 2}
+    - target: {fileID: 6278196325046928461, guid: 15f18c97251564d33a567e24c4f7d648, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 049886ac1c9be8d4db643c92eee3880f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15f18c97251564d33a567e24c4f7d648, type: 3}
 --- !u!1 &705507993
@@ -747,6 +755,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 394567963, guid: f2e479ef6298004469086b66c946dd1b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130145097810947676, guid: f2e479ef6298004469086b66c946dd1b, type: 3}
+      propertyPath: vrMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5564250490536399627, guid: f2e479ef6298004469086b66c946dd1b, type: 3}
       propertyPath: m_Name
       value: BoardVehicleVR
@@ -794,6 +810,14 @@ PrefabInstance:
     - target: {fileID: 5564250490536399638, guid: f2e479ef6298004469086b66c946dd1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564250490600335705, guid: f2e479ef6298004469086b66c946dd1b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564250491925933695, guid: f2e479ef6298004469086b66c946dd1b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8388245962229274709, guid: f2e479ef6298004469086b66c946dd1b, type: 3}
       propertyPath: m_InteractionManager

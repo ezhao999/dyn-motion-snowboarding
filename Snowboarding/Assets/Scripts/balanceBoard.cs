@@ -46,7 +46,6 @@ public class balanceBoard : MonoBehaviour
         torqueForce = axisFromRotate.normalized * axisFromRotate.magnitude * 50;
         torqueForce.x = torqueForce.x * 0.4f;
         torqueForce -= rb.angularVelocity;
-        //torqueForce.z = 0;
         Debug.Log(torqueForce);
         rb.AddTorque(torqueForce * rb.mass * 0.02f, ForceMode.Impulse);
 
