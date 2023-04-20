@@ -25,6 +25,7 @@ public class SnowboardVehicle : MonoBehaviour
     public Vector3 wheelVisualRotation;
     public float currentWheelRotation = 0;
 
+    [SerializeField] public bool vrMode;
     private inputData _inputData; // for VR controller rotation input
     private Vector3 inputForceDir = new Vector3(0, 0, 0);
     private Rigidbody rb;
@@ -39,6 +40,17 @@ public class SnowboardVehicle : MonoBehaviour
     private void Update()
     {
         //V1:
+        if (vrMode)
+        {
+            if (_inputData._rightController.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion rightQuat))
+            {
+                Vector3 rightInput = rightQuat.eulerAngles; // range from 0 to 360
+                float theta = rightInput.z;
+                if (theta > 180) { theta = theta - 360; } // modify so that 0 is center, left right at most 180
+                theta = Mathf.Clamp(theta, -90, 90); // limits rotation between 90 degrees
+                wheelAngle = -theta / 90; // map to value between -1 to , increase denominator to reduce sensitivity
+            }
+        }
 
         float mappedSteer = wheelAngle * maxSteer;
 
@@ -99,7 +111,7 @@ public class SnowboardVehicle : MonoBehaviour
         float oldRange = b - a;
         float newRange = d - c;
         float proportion = oldVal / oldRange;
-        float newVal = proportion * newRange;
+        float newVal = c + (proportion * newRange);
         return newVal;
     }
 
