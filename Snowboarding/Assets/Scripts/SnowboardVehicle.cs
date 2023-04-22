@@ -30,6 +30,9 @@ public class SnowboardVehicle : MonoBehaviour
     private Vector3 inputForceDir = new Vector3(0, 0, 0);
     private Rigidbody rb;
 
+    public Vector3 rightInput;
+    public float theta;
+
 
     void Start()
     {
@@ -44,8 +47,9 @@ public class SnowboardVehicle : MonoBehaviour
         {
             if (_inputData._rightController.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion rightQuat))
             {
-                Vector3 rightInput = rightQuat.eulerAngles; // range from 0 to 360
-                float theta = rightInput.y;
+                rightInput = rightQuat.eulerAngles; // range from 0 to 360
+                theta = rightInput.y;
+                Debug.Log($"Raw: {rightInput}");
                 if (theta > 180) { theta = theta - 360; } // modify so that 0 is center, left right at most 180
                 theta = Mathf.Clamp(theta, -10, 10); // limits rotation between 90 degrees
                 wheelAngle = -theta / 10; // map to value between -1 to 1, increase denominator to reduce sensitivity
@@ -93,7 +97,7 @@ public class SnowboardVehicle : MonoBehaviour
         // Goal: Constant minimum speed
         if(rb.velocity.x < minVelocity)
         {
-            Debug.Log("adding force");
+            //Debug.Log("adding force");
             //rb.AddForce(new Vector3(5, 0, 0));
             rb.AddRelativeForce(Vector3.forward * 200);
         }
