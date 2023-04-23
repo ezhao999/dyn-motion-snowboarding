@@ -1509,8 +1509,17 @@
                 },
                 {
                     "name": "Reset",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "f3112184-7595-495a-a6d7-bbe433b70a7a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Back",
+                    "type": "Button",
+                    "id": "9a935345-bd0e-4aec-95ee-9b513275fadd",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1531,12 +1540,23 @@
                 },
                 {
                     "name": "",
-                    "id": "ce0b0e49-a01d-4cf5-ba8d-25e297aee288",
-                    "path": "<OculusTouchController>{RightHand}/primaryButton",
+                    "id": "01ebc06f-44d6-49ae-ba6b-2e34e669a6b3",
+                    "path": "<XRController>{RightHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1bbdc36f-2563-4c34-a480-b31a3195645d",
+                    "path": "<XRController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Back",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

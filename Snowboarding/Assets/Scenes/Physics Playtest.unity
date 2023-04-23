@@ -736,6 +736,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81ab99855a4e248fea180d7ece8731ed, type: 3}
+--- !u!114 &1516613219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8515323076261737926, guid: f2e479ef6298004469086b66c946dd1b, type: 3}
+  m_PrefabInstance: {fileID: 8388245962851663182}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1813495887
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,6 +827,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4130145097810947653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5564250490536399627, guid: f2e479ef6298004469086b66c946dd1b, type: 3}
+  m_PrefabInstance: {fileID: 8388245962851663182}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5564250490536399636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4130145097810947653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33cf1e0a2ea1ada429d5fe2f6b7da483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  output: {fileID: 1516613219}
 --- !u!1001 &8388245962851663182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -829,11 +858,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4130145097810947676, guid: f2e479ef6298004469086b66c946dd1b, type: 3}
       propertyPath: vrMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953573712558233986, guid: f2e479ef6298004469086b66c946dd1b, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5564250490536399627, guid: f2e479ef6298004469086b66c946dd1b, type: 3}
       propertyPath: m_Name
       value: BoardVehicleVR
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564250490536399636, guid: f2e479ef6298004469086b66c946dd1b, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5564250490536399638, guid: f2e479ef6298004469086b66c946dd1b, type: 3}
       propertyPath: m_RootOrder

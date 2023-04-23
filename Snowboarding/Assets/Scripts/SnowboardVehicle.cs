@@ -27,8 +27,9 @@ public class SnowboardVehicle : MonoBehaviour
 
     [SerializeField] public bool vrMode;
     private inputData _inputData; // for VR controller rotation input
+    private Calibration calibration;
     private Vector3 inputForceDir = new Vector3(0, 0, 0);
-    private Rigidbody rb;
+    public Rigidbody rb;
 
     public Vector3 rightInput;
     public float theta;
@@ -38,21 +39,51 @@ public class SnowboardVehicle : MonoBehaviour
     {
         _inputData = GetComponent<inputData>(); // for VR controller rotation input
         rb = GetComponent<Rigidbody>();
+        calibration = GetComponent<Calibration>();
     }
 
     private void Update()
     {
         //V1:
-        if (vrMode)
+
+        // TODO 1: add Calibration script into SnowboardVehicle
+        // TODO 2: add if loop to check if both lBound and rBound aren't null
+        // TODO 3: add variable of range
+/*        if (vrMode)
         {
-            if (_inputData._rightController.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion rightQuat))
+            if (_inputData._leftController.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion rightQuat))
             {
                 rightInput = rightQuat.eulerAngles; // range from 0 to 360
-                theta = rightInput.y;
-                Debug.Log($"Raw: {rightInput}");
+                theta = rightInput.z;
                 if (theta > 180) { theta = theta - 360; } // modify so that 0 is center, left right at most 180
                 theta = Mathf.Clamp(theta, -10, 10); // limits rotation between 90 degrees
                 wheelAngle = -theta / 10; // map to value between -1 to 1, increase denominator to reduce sensitivity
+            }
+        }*/
+
+        if (vrMode)
+        {
+            if (_inputData._leftController.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion rightQuat))
+            {
+                rightInput = rightQuat.eulerAngles; // range from 0 to 360
+
+                if (calibration.isCalibrated)
+                {
+                    theta = rightInput.z;
+                    //if (theta > 180) { theta = theta - 360; } // modify so that 0 is center, left right at most 180
+                    /*                    float min = Mathf.Min((float)calibration.lBound, (float)calibration.rBound);
+                                        float max = Mathf.Max((float)calibration.lBound, (float)calibration.rBound);
+                                        theta = Mathf.Clamp(theta, min, max);*/
+                    // 50 to 300: 300 should be 1
+                    // 300 to 50: 50 should be 1
+                    float min = (float)calibration.lBound;
+                    float max = (float)calibration.rBound;
+
+                    wheelAngle = scale(min, max, -1f, 1f, theta);
+                    Debug.Log(wheelAngle);
+                    wheelAngle = Mathf.Clamp(wheelAngle, -1f, 1f);
+                   
+                }
             }
         }
 
@@ -114,7 +145,7 @@ public class SnowboardVehicle : MonoBehaviour
     {
         float oldRange = b - a;
         float newRange = d - c;
-        float proportion = oldVal / oldRange;
+        float proportion = (oldVal - a) / oldRange;
         float newVal = c + (proportion * newRange);
         return newVal;
     }

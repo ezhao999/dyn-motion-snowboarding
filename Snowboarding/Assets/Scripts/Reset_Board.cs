@@ -9,10 +9,12 @@ public class Reset_Board : MonoBehaviour
     public Vector3 startPos;
     public Quaternion startRot;
     private Rigidbody rb;
+    private Calibration calibration;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        calibration = GetComponent<Calibration>();
         startPos = gameObject.transform.position;
         startRot = gameObject.transform.rotation;
     }
@@ -20,7 +22,12 @@ public class Reset_Board : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!calibration.isCalibrated)
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+            gameObject.transform.position = startPos;
+            gameObject.transform.rotation = startRot;
+        }
     }
 
     void OnReset()
