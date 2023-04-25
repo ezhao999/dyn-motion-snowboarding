@@ -10,6 +10,7 @@ public class Reset_Board : MonoBehaviour
     public Quaternion startRot;
     private Rigidbody rb;
     private Calibration calibration;
+    private SnowboardVehicle snowboardVehicleScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class Reset_Board : MonoBehaviour
         calibration = GetComponent<Calibration>();
         startPos = gameObject.transform.position;
         startRot = gameObject.transform.rotation;
+        snowboardVehicleScript = GetComponent<SnowboardVehicle>();
     }
 
     // Update is called once per frame
@@ -36,5 +38,7 @@ public class Reset_Board : MonoBehaviour
         rb.velocity = new Vector3(0, 0, 0);
         gameObject.transform.position = startPos;
         gameObject.transform.rotation = startRot;
+        rb.isKinematic = false;
+        snowboardVehicleScript.myState = GameState.playing;
     }
 }
