@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void ResetRound() // want to do same thing as reset board
+    private void ResetRound() // reset board, enemy back into get ready state
     {
         // reset board, score, enemy
         vehicle.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
@@ -124,21 +124,24 @@ public class GameManager : MonoBehaviour
     {
         // TODO get ready UI
         yield return new WaitForSeconds(2.0f);
-        // Turn off UI
+        // TODO Turn off UI
         StartRound();
     }
 
     public void PlayerStuck() // TODO SnowboardVehicle call this funciton whenever stuck
     {
-        // UI?
         StartCoroutine(OopsState());
     }
 
     public IEnumerator OopsState()
     {
+        // TODO oops UI
         gameState = GameState.oops;
-        // TODO Yeti catch up
+
+        // TODO Yeti catch up related code
+
         yield return new WaitForSeconds(2.0f);
+        // TODO turn off UI
         ResetRound();
     }
 
