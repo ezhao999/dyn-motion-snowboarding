@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.UI;
 
-public enum GameState { setup, getReady, playing, gameOver };
+//public enum GameState { setup, getReady, playing, gameOver };
 
 public class SnowboardVehicle : MonoBehaviour
 {
@@ -38,7 +38,7 @@ public class SnowboardVehicle : MonoBehaviour
     public float theta;
 
     // Game State Related
-    public GameState myState = GameState.setup;
+    //public GameState myState = GameState.setup;
 
     void Start()
     {
@@ -53,9 +53,9 @@ public class SnowboardVehicle : MonoBehaviour
         // TODO 1: add Calibration script into SnowboardVehicle
         // TODO 2: add if loop to check if both lBound and rBound aren't null
         // TODO 3: add variable of range
-        if (myState != GameState.gameOver)
-        {
-            rb.isKinematic = false;
+        //if (myState != GameState.gameOver)
+        //{
+            //rb.isKinematic = false;
             if (vrMode)
             {
                 if (_inputData._leftController.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion rightQuat))
@@ -133,28 +133,28 @@ public class SnowboardVehicle : MonoBehaviour
             //      Current progress:
             //      Raising wheel stiffness in the rear helps prevent oversteer / spinning out
             //      No need to add scripts for now
-        }
-        else // else myState = GameState.gameOver
-        { // display UI press A to restart
-          }
+        //}
+        //else // else myState = GameState.gameOver
+        //{ // display UI press A to restart
+        //  }
     }
 
-    private void visualBoardRotate()
-    {
-        // goal: map -1 - 1 --> -15
-        float visualAngle = wheelAngle * -15;
-        visualBoard.transform.localRotation = Quaternion.Euler(
-                                                new Vector3(0, 0, visualAngle));
-    }
+private void visualBoardRotate()
+{
+    // goal: map -1 - 1 --> -15
+    float visualAngle = wheelAngle * -15;
+    visualBoard.transform.localRotation = Quaternion.Euler(
+                                            new Vector3(0, 0, visualAngle));
+}
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.tag == "Goal")
-        {
-            rb.isKinematic = true;
-            myState = GameState.gameOver;
-        }
-    }
+//private void OnCollisionEnter(Collision collision)
+//    {
+//        if (collision.transform.tag == "Goal")
+//        {
+//            rb.isKinematic = true;
+//            myState = GameState.gameOver;
+//        }
+//    }
 
     float scale(float a, float b, float c, float d, float oldVal)
     {
