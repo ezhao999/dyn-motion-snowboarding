@@ -50,7 +50,7 @@ public class Calibration : MonoBehaviour
         } else if (rBound == null)
         {
             outText = $"Press 'A' to set right tilt to {angle}";
-        } else
+        } else if (!isCalibrated)
         {
             outText = $"Board Ready!\nTilt calibration from {lBound} to {rBound}";
         }

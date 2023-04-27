@@ -20,6 +20,7 @@ public class SnowboardVehicle : MonoBehaviour
 
     [SerializeField] private GameObject frontMesh;
     [SerializeField] private GameObject backMesh;
+    [SerializeField] private GameObject visualBoard;
     [SerializeField] private Text DebugText;
 
     // [SerializeField] private float maxAngle;
@@ -85,6 +86,7 @@ public class SnowboardVehicle : MonoBehaviour
 
             //get current angle
             wheelVisualRotation = frontMesh.transform.localRotation.eulerAngles;
+            visualBoardRotate();
 
             //set rotation as new Vector3(currentX, newY, currentZ);
             frontMesh.transform.localRotation = Quaternion.Euler(
@@ -120,11 +122,11 @@ public class SnowboardVehicle : MonoBehaviour
 
             // V4:
             // Goal: Constant minimum speed
-            if (rb.velocity.x < minVelocity)
+            if (rb.velocity.magnitude < minVelocity)
             {
                 //Debug.Log("adding force");
                 //rb.AddForce(new Vector3(5, 0, 0));
-                rb.AddRelativeForce(Vector3.forward * 200);
+                rb.AddRelativeForce(Vector3.forward * 500);
             }
             // V3:
             // Goal: Limit Player Rotation
@@ -135,6 +137,14 @@ public class SnowboardVehicle : MonoBehaviour
         else // else myState = GameState.gameOver
         { // display UI press A to restart
           }
+    }
+
+    private void visualBoardRotate()
+    {
+        // goal: map -1 - 1 --> -15
+        float visualAngle = wheelAngle * -15;
+        visualBoard.transform.localRotation = Quaternion.Euler(
+                                                new Vector3(0, 0, visualAngle));
     }
 
     private void OnCollisionEnter(Collision collision)
