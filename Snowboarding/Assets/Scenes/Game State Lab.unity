@@ -154,10 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: 0
   messageOverlay: {fileID: 1516613219}
-  vehicle: {fileID: 0}
-  VehStartPos: {x: 0, y: 0, z: 0}
-  VehStartRot: {x: 0, y: 0, z: 0, w: 0}
-  _inputData: {fileID: 0}
+  vehicle: {fileID: 4130145097810947653}
 --- !u!4 &48611754
 Transform:
   m_ObjectHideFlags: 0
