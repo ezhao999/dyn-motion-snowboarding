@@ -15,7 +15,7 @@ MonoBehaviour:
   prefabs:
   - gameObject: {fileID: 144066, guid: 1e035cbdfde78ce46a4439d4f3ef5da2, type: 3}
     settings:
-      m_Strength: 31
+      m_Strength: 43.478992
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -223,7 +223,7 @@ MonoBehaviour:
     name: Street_Lamp
   - gameObject: {fileID: 8064113153433566034, guid: 1577a51f2ebf155438ad431e44edd054, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 100
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -415,7 +415,7 @@ MonoBehaviour:
     name: Barn_03
   - gameObject: {fileID: 2979387916809768606, guid: c81523bdcafd56f43a67f3ef25a1995c, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 94.17647
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
