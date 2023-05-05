@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Wheel Physics Lab.unity
     guid: 4edd6f30b465aeb47859719de8415b4e
   - enabled: 1
-    path: Assets/Scenes/Physics Playtest.unity
+    path: Assets/Scenes/Boost test.unity
     guid: 78f6ed164d85e4ae1ad457efbfab6fd3
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3a06dcbd28eb245b7a0ec98715532437, type: 2}

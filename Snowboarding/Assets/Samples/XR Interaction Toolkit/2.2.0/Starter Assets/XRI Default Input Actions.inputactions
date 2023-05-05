@@ -1524,6 +1524,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "BoostHeld",
+                    "type": "Button",
+                    "id": "94303256-1e7e-425e-979f-01ad38c058fa",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BoostRelease",
+                    "type": "Button",
+                    "id": "daeea9b9-9e90-4253-8f9b-ba563ae0e13d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1557,6 +1575,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2f79afe1-885e-43ca-99ae-0f9ded8d7f4d",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BoostHeld",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c9b84ffe-f522-41b4-906b-ee0948797184",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BoostRelease",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
