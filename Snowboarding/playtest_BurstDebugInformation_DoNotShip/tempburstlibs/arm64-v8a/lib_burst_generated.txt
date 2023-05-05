@@ -163,6 +163,7 @@ Library: lib_burst_generated
 --root-assembly=/Users/jiaqiwang/Documents/dyn-motion-snowboarding/Snowboarding/Temp/StagingArea/Data/Managed/Unity.Animation.Rigging.dll
 --root-assembly=/Users/jiaqiwang/Documents/dyn-motion-snowboarding/Snowboarding/Temp/StagingArea/Data/Managed/Unity.Burst.dll
 --root-assembly=/Users/jiaqiwang/Documents/dyn-motion-snowboarding/Snowboarding/Temp/StagingArea/Data/Managed/Unity.TextMeshPro.dll
+--root-assembly=/Users/jiaqiwang/Documents/dyn-motion-snowboarding/Snowboarding/Temp/StagingArea/Data/Managed/Unity.Polybrush.dll
 --root-assembly=/Users/jiaqiwang/Documents/dyn-motion-snowboarding/Snowboarding/Temp/StagingArea/Data/Managed/Cinemachine.dll
 --root-assembly=/Users/jiaqiwang/Documents/dyn-motion-snowboarding/Snowboarding/Temp/StagingArea/Data/Managed/Assembly-CSharp.dll
 --root-assembly=/Users/jiaqiwang/Documents/dyn-motion-snowboarding/Snowboarding/Temp/StagingArea/Data/Managed/Unity.Timeline.dll
