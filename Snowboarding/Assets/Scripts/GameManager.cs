@@ -1,153 +1,153 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.XR;
+//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+//using UnityEngine.UI;
+//using UnityEngine.XR;
 
-public enum GameState { menu, instruction, cutscene, getReady, playing, oops, gameOverWin };
+//public enum GameState { menu, instruction, cutscene, getReady, playing, oops, gameOverWin };
 
-public class GameManager : MonoBehaviour
-{
-    // Singleton Declaration
-    public static GameManager S;
+//public class GameManager : MonoBehaviour
+//{
+//    // Singleton Declaration
+//    public static GameManager S;
 
-    // Game State
-    public GameState gameState;
+//    // Game State
+//    public GameState gameState;
 
-    // UI variables
-    public Text messageOverlay;
+//    // UI variables
+//    public Text messageOverlay;
 
-    // vehicle related
-    public GameObject vehicle;
-    private Vector3 VehStartPos;
-    private Quaternion VehStartRot;
+//    // vehicle related
+//    public GameObject vehicle;
+//    private Vector3 VehStartPos;
+//    private Quaternion VehStartRot;
 
-    // Reference to other game objects
-    private inputData _inputData;
+//    // Reference to other game objects
+//    private inputData _inputData;
 
-    private void Awake()
-    {
-        // Singleton Definition
-        if (GameManager.S)
-        {
-            Destroy(this.gameObject);
-        } else
-        {
-            S = this;
-        }
-    }
+//    private void Awake()
+//    {
+//        // Singleton Definition
+//        if (GameManager.S)
+//        {
+//            Destroy(this.gameObject);
+//        } else
+//        {
+//            S = this;
+//        }
+//    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        gameState = GameState.menu;
+//    // Start is called before the first frame update
+//    void Start()
+//    {
+//        gameState = GameState.menu;
 
-        // Reset text message or any UI
-        // messageOverlay.enabled = true;
-        // messageOverlay.text = "";
+//        // Reset text message or any UI
+//        // messageOverlay.enabled = true;
+//        // messageOverlay.text = "";
 
-        // Input
-        _inputData = vehicle.GetComponent<inputData>();
+//        // Input
+//        _inputData = vehicle.GetComponent<inputData>();
 
-        // init board location for reset
-        VehStartPos = vehicle.gameObject.transform.position;
-        VehStartRot = vehicle.gameObject.transform.rotation;
-    }
+//        // init board location for reset
+//        VehStartPos = vehicle.gameObject.transform.position;
+//        VehStartRot = vehicle.gameObject.transform.rotation;
+//    }
 
-    // Update is called once per frame
-    void Update() // USED FOR DETECTING INPUT AT CERTAIN STATES
-    {
-        if (gameState == GameState.menu)
-        {
-            messageOverlay.enabled = true;
-            messageOverlay.text = "menu";
-            // TODO Menu UI
-            if (_inputData._leftController.TryGetFeatureValue(CommonUsages.primaryButton, out bool buttonVal) && buttonVal)
-            {
-                gameState = GameState.instruction;
-            }
-        }
-        else if (gameState == GameState.instruction)
-        {
-            bool isCalibrated = false; // private since only used here
-            // TODO try to do a single call to callibration that does everything
+//    // Update is called once per frame
+//    void Update() // USED FOR DETECTING INPUT AT CERTAIN STATES
+//    {
+//        if (gameState == GameState.menu)
+//        {
+//            messageOverlay.enabled = true;
+//            messageOverlay.text = "menu";
+//            // TODO Menu UI
+//            if (_inputData._leftController.TryGetFeatureValue(CommonUsages.primaryButton, out bool buttonVal) && buttonVal)
+//            {
+//                gameState = GameState.instruction;
+//            }
+//        }
+//        else if (gameState == GameState.instruction)
+//        {
+//            bool isCalibrated = false; // private since only used here
+//            // TODO try to do a single call to callibration that does everything
 
-            // final "A" press triggers cutscene
-            if (isCalibrated && _inputData._leftController.TryGetFeatureValue(CommonUsages.primaryButton, out bool buttonVal) && buttonVal)
-            {
-                gameState = GameState.cutscene;
-            }
-        }
-        else if (gameState == GameState.cutscene)
-        {
-            // TODO play cutscene
-            ResetRound();
-        }
-        else if (gameState == GameState.oops)
-        {
-            // TODO UI
-            if (_inputData._leftController.TryGetFeatureValue(CommonUsages.primaryButton, out bool buttonVal) && buttonVal)
-            {
-                ResetRound();
-            }
-        }
-        else if (gameState == GameState.gameOverWin)
-        {
-            // TODO UI
-            // TODO option 1: restart round (start up hill)
-            // TODO option 2: restart whole game
-        }
-    }
+//            // final "A" press triggers cutscene
+//            if (isCalibrated && _inputData._leftController.TryGetFeatureValue(CommonUsages.primaryButton, out bool buttonVal) && buttonVal)
+//            {
+//                gameState = GameState.cutscene;
+//            }
+//        }
+//        else if (gameState == GameState.cutscene)
+//        {
+//            // TODO play cutscene
+//            ResetRound();
+//        }
+//        else if (gameState == GameState.oops)
+//        {
+//            // TODO UI
+//            if (_inputData._leftController.TryGetFeatureValue(CommonUsages.primaryButton, out bool buttonVal) && buttonVal)
+//            {
+//                ResetRound();
+//            }
+//        }
+//        else if (gameState == GameState.gameOverWin)
+//        {
+//            // TODO UI
+//            // TODO option 1: restart round (start up hill)
+//            // TODO option 2: restart whole game
+//        }
+//    }
 
-    private void ResetRound() // reset board, enemy back into get ready state
-    {
-        // reset board, score, enemy
-        vehicle.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-        vehicle.gameObject.transform.position = VehStartPos;
-        vehicle.gameObject.transform.rotation = VehStartRot;
-        // TODO destroy curr yeti, re-instantiate the yeti prefab
+//    private void ResetRound() // reset board, enemy back into get ready state
+//    {
+//        // reset board, score, enemy
+//        vehicle.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+//        vehicle.gameObject.transform.position = VehStartPos;
+//        vehicle.gameObject.transform.rotation = VehStartRot;
+//        // TODO destroy curr yeti, re-instantiate the yeti prefab
 
-        // go back into getReady state
-        gameState = GameState.getReady;
-        StartCoroutine(GetReadyState());
-    }
+//        // go back into getReady state
+//        gameState = GameState.getReady;
+//        StartCoroutine(GetReadyState());
+//    }
 
-    private void StartRound()
-    {
-        gameState = GameState.playing;
-        // TODO get the yeti gameobject, call the start chasing funciton in it
-        // TODO in SnoboardVehicle script, change it to can only control board when
-                // the state is playing/instruction/gameOverWin
-    }
+//    private void StartRound()
+//    {
+//        gameState = GameState.playing;
+//        // TODO get the yeti gameobject, call the start chasing funciton in it
+//        // TODO in SnoboardVehicle script, change it to can only control board when
+//                // the state is playing/instruction/gameOverWin
+//    }
 
-    public IEnumerator GetReadyState()
-    {
-        // TODO get ready UI
-        yield return new WaitForSeconds(2.0f);
-        // TODO Turn off UI
-        StartRound();
-    }
+//    public IEnumerator GetReadyState()
+//    {
+//        // TODO get ready UI
+//        yield return new WaitForSeconds(2.0f);
+//        // TODO Turn off UI
+//        StartRound();
+//    }
 
-    public void PlayerStuck() // TODO SnowboardVehicle call this funciton whenever stuck
-    {
-        StartCoroutine(OopsState());
-    }
+//    public void PlayerStuck() // TODO SnowboardVehicle call this funciton whenever stuck
+//    {
+//        StartCoroutine(OopsState());
+//    }
 
-    public IEnumerator OopsState()
-    {
-        // TODO oops UI
-        gameState = GameState.oops;
+//    public IEnumerator OopsState()
+//    {
+//        // TODO oops UI
+//        gameState = GameState.oops;
 
-        // TODO Yeti catch up related code
+//        // TODO Yeti catch up related code
 
-        yield return new WaitForSeconds(2.0f);
-        // TODO turn off UI
-        ResetRound();
-    }
+//        yield return new WaitForSeconds(2.0f);
+//        // TODO turn off UI
+//        ResetRound();
+//    }
 
-    public void PlayerHitGoal ()// TODO SnowboardVehicle call this funciton whenever hit goal box
-    {
-        // TODO UI
-        gameState = GameState.gameOverWin;
-    }
-}
+//    public void PlayerHitGoal ()// TODO SnowboardVehicle call this funciton whenever hit goal box
+//    {
+//        // TODO UI
+//        gameState = GameState.gameOverWin;
+//    }
+//}

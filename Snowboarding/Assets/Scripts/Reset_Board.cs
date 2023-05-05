@@ -38,7 +38,7 @@ public class Reset_Board : MonoBehaviour
         rb.velocity = new Vector3(0, 0, 0);
         gameObject.transform.position = startPos;
         gameObject.transform.rotation = startRot;
-        //rb.isKinematic = false;
-        //snowboardVehicleScript.myState = GameState.playing;
+        rb.isKinematic = false;
+        snowboardVehicleScript.myState = GameState.playing;
     }
 }
