@@ -17,18 +17,12 @@ public class Navigate_instructions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        if (SceneManager.GetActiveScene().buildIndex < 4)
         {
-            BackButton.SetActive(false);
-        } else {
-            BackButton.SetActive(true);
-        }
-
-        if (SceneManager.GetActiveScene().buildIndex == 3)
+            NextPage();
+        } else if (SceneManager.GetActiveScene().buildIndex == 4)
         {
-            NextButton.SetActive(false);
-        } else {
-            NextButton.SetActive(true);
+            SceneManager.LoadScene(1);
         }
     }
 
@@ -41,12 +35,12 @@ public class Navigate_instructions : MonoBehaviour
     }
 
     public IEnumerator GoNext(){
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(3.0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public IEnumerator GoBack(){
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(3.0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 

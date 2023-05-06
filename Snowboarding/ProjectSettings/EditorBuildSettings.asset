@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Boost test.unity
     guid: 78f6ed164d85e4ae1ad457efbfab6fd3
   - enabled: 1
+    path: Assets/Scenes/Game Title Screen.unity
+    guid: 20886defe471249a2a6ed01887aa596a
+  - enabled: 1
     path: Assets/Scenes/Physics Playtest 1.unity
     guid: d06b9855e98bf4abfbb8eeeb7aa3a595
   - enabled: 1
