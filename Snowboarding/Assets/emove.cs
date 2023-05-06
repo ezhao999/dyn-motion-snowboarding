@@ -16,7 +16,7 @@ public class emove : MonoBehaviour
     // Use this for initialization
      IEnumerator Start()
  {
-     yield return new WaitForSeconds(10f);
+     yield return new WaitForSeconds(20f);
     
         Player = GameObject.FindWithTag("Player"); 
         target = Player.transform;
@@ -33,7 +33,12 @@ public class emove : MonoBehaviour
     void Update()
     {
         Vector3 direction = target.position - transform.position;
-        
+        if (_moveSpeed<5.0f){
+            _moveSpeed+=0.1f;
+        }
+        else {
+            _moveSpeed-=0.1f;
+        }
 
         direction = direction.normalized;
         
