@@ -16,13 +16,14 @@ public class Calibration : MonoBehaviour
     private inputData _inputData;
     private SnowboardVehicle board;
     public Text output;
+    public calibrationBars UI_Bars;
 
 
     // vars
     public float? lBound = null;
     public float? rBound = null;
     public float? range = null;
-    private float rawTheta;
+    public float rawTheta;
     public bool isCalibrated;
 
 
@@ -61,6 +62,10 @@ public class Calibration : MonoBehaviour
     void OnReset() // sets bounds using right controller button, and left controller tilt
     {
         Debug.Log("pressed");
+        if (lBound == null || rBound == null)
+        {
+            UI_Bars.setBar(UI_Bars.target);
+        }
         // If lBound is null, set lBound
         if (lBound == null)
         {
