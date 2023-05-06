@@ -9,6 +9,8 @@ public class emove : MonoBehaviour
     Transform target;
     GameObject Player;
 
+    public float distance = 0f;
+
     [SerializeField]
     float _moveSpeed = 2.0f;
 
@@ -33,6 +35,7 @@ public class emove : MonoBehaviour
     void Update()
     {
         Vector3 direction = target.position - transform.position;
+        distance = direction.magnitude;
         if (_moveSpeed<5.0f){
             _moveSpeed+=0.1f;
         }
