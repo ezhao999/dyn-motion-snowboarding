@@ -2842,17 +2842,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void emove_Update_m6A6C29A1CBF08A7CE729EE8009
 		}
 	}
 	{
-		// _moveSpeed+=0.05f;
+		// _moveSpeed+=0.1f;
 		float L_6 = __this->____moveSpeed_7;
-		__this->____moveSpeed_7 = ((float)il2cpp_codegen_add(L_6, (0.0500000007f)));
+		__this->____moveSpeed_7 = ((float)il2cpp_codegen_add(L_6, (0.100000001f)));
 		goto IL_004f;
 	}
 
 IL_003d:
 	{
-		// _moveSpeed-=0.05f;
+		// _moveSpeed-=0.1f;
 		float L_7 = __this->____moveSpeed_7;
-		__this->____moveSpeed_7 = ((float)il2cpp_codegen_subtract(L_7, (0.0500000007f)));
+		__this->____moveSpeed_7 = ((float)il2cpp_codegen_subtract(L_7, (0.100000001f)));
 	}
 
 IL_004f:
