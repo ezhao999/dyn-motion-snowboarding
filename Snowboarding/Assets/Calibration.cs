@@ -95,5 +95,6 @@ public class Calibration : MonoBehaviour
         rBound = null;
         range = null;
         isCalibrated = false;
+        UI_Bars.resetState();
 }
 }

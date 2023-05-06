@@ -20,12 +20,7 @@ public class calibrationBars : MonoBehaviour
     private float maxValue = 30f;
     void Start()
     {
-        calibrationScreen.sprite = screen1;
-        calibrationL.fillAmount = 0;
-        calibrationR.fillAmount = 0;
-        calibrationL.color = pending;
-        calibrationR.color = pending;
-        target = calibrationL;
+        resetState();
 
     }
 
@@ -43,18 +38,24 @@ public class calibrationBars : MonoBehaviour
             calibrationL.fillAmount = 0;
             calibrationR.fillAmount = 0;
             return;
-        } else if (calibration.lBound == null)
+        }
+        else if (calibration.lBound == null)
         {
+            calibrationScreen.sprite = screen1;
             target = calibrationL;
-        } else if (calibration.rBound == null)
+        }
+        else if (calibration.rBound == null)
         {
+            calibrationScreen.sprite = screen2;
             target = calibrationR;
-        } else
+        }
+        else
         {
             return;
         }
         adjustBar(target);
     }
+
 
     public void setBar(Image target)
     {
@@ -77,6 +78,19 @@ public class calibrationBars : MonoBehaviour
 
 
         target.fillAmount = proportion;
+    }
+
+    public void resetState()
+    {
+        calibrationScreen.enabled = true;
+        calibrationL.enabled = true;
+        calibrationR.enabled = true;
+        calibrationScreen.sprite = screen1;
+        calibrationL.fillAmount = 0;
+        calibrationR.fillAmount = 0;
+        calibrationL.color = pending;
+        calibrationR.color = pending;
+        target = calibrationL;
     }
 
     float scale(float a, float b, float c, float d, float oldVal)
