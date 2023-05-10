@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
+using UnityEngine.Playables;
 
 
 public class Calibration : MonoBehaviour
@@ -17,6 +18,7 @@ public class Calibration : MonoBehaviour
     private SnowboardVehicle board;
     public Text output;
     public calibrationBars UI_Bars;
+    public PlayableDirector PlayableDirector; //cutscene stuff
 
 
     // vars
@@ -84,6 +86,7 @@ public class Calibration : MonoBehaviour
         } else
         {
             isCalibrated = true;
+            PlayableDirector.Play();
         }
         // Elif rBound is null, set rBound
         // Else: set isKinematic of the rigidbody to false

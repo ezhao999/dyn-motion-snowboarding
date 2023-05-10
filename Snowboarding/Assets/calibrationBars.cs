@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class calibrationBars : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -13,6 +14,7 @@ public class calibrationBars : MonoBehaviour
     public Image target; // which bar to set? L or R
     public Sprite screen1;
     public Sprite screen2;
+
 
     private Color32 finished = new Color32(46, 197, 25, 255);
     private Color pending = new Color(255, 255, 255, 0.3f);
@@ -101,4 +103,10 @@ public class calibrationBars : MonoBehaviour
         float newVal = c + (proportion * newRange);
         return newVal;
     }
+//cutscene stuff
+    // public void Play(){
+    //     PlayableDirector.Play();
+        
+    // }
+
 }

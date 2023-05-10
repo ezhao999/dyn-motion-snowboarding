@@ -12,7 +12,7 @@ public class emove : MonoBehaviour
     public float distance = 0f;
 
     [SerializeField]
-    float _moveSpeed = 2.0f;
+    float _moveSpeed = 3.5f;
 
 
     // Use this for initialization

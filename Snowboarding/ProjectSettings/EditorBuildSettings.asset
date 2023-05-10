@@ -44,6 +44,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Instructions 3.unity
     guid: 5e9d639ef55294c608012a6e20f81aaa
+  - enabled: 0
+    path: Assets/Scenes/Physics Playtest Canvas Redone.unity
+    guid: fc8bfa7807b47324fab20e33d69bdb9d
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3a06dcbd28eb245b7a0ec98715532437, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 3088c9543fcbafe4591ea6bf4f3f964f, type: 2}
